@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(new Ray(transform.position, hitColliders[i].transform.position - transform.position), out hit, Mathf.Infinity, layerMask))
                     {
-                        Debug.DrawLine(transform.position, hit.transform.position, Color.blue);
+                        Debug.DrawLine(transform.position, hit.point, Color.blue);
                         if (hit.transform.gameObject.tag == "Interactable")
                         {
                             interactable = hit.transform.GetComponent<IInteractable>();
