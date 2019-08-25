@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class TestInteractableObject : MonoBehaviour, IInteractable
 {
     public GameObject canvas;
+    public Camera mainCamera;
+    public Camera computerCamera;
     public void PlayerInRange()
     {
         canvas.SetActive(true);
@@ -15,6 +17,8 @@ public class TestInteractableObject : MonoBehaviour, IInteractable
     public void Interact()
     {
         print("Interacted");
+        mainCamera.gameObject.SetActive(false);
+        computerCamera.gameObject.SetActive(true);
     }
     public void PlayerOutRange()
     {
