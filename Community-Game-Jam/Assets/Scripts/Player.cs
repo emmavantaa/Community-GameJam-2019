@@ -8,19 +8,22 @@ public class Player : MonoBehaviour
     public float interactRadius;
     public LayerMask layerMask;
     public IInteractable interactable;
+    private Rigidbody rb;
 
     private bool interactableInRadius = false; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
+    #region Movement
     {
-        if(Input.GetKey(KeyCode.W)) {
+        #region regular controls
+        /*if (Input.GetKey(KeyCode.W)) {
             transform.position += new Vector3(1 * Time.deltaTime * speed, 0, 0);
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
@@ -38,7 +41,30 @@ public class Player : MonoBehaviour
         {
             transform.position += new Vector3(0, 0, -1 * Time.deltaTime * speed);
             transform.eulerAngles = new Vector3(0, 90, 0);
+        }*/
+        #endregion
+        #region space controls
+        if (Input.GetKey(KeyCode.W))
+        {
+            rb.AddForce(new Vector3(Time.deltaTime * speed,0,0));
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce(new Vector3(-Time.deltaTime * speed, 0, 0));
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce(new Vector3(0, 0, Time.deltaTime * speed));
+            transform.eulerAngles = new Vector3(0, -90, 0);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce(new Vector3(0, 0, -Time.deltaTime * speed));
+            transform.eulerAngles = new Vector3(0, 90, 0);
+        }
+        #endregion
         if (Input.GetKeyDown(KeyCode.E))
         {
             if(interactable != null)
@@ -46,6 +72,7 @@ public class Player : MonoBehaviour
                 interactable.Interact();
             }
         }
+        #endregion
 
         //Check if there are interactbles in the radius
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactRadius);
