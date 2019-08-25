@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public LayerMask layerMask;
     public IInteractable interactable;
     private Rigidbody rb;
+    public List<Item> Inventory = new List<Item>();
 
     private bool interactableInRadius = false; 
 

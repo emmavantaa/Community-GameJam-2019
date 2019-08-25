@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class TestInteractableObject : MonoBehaviour, IInteractable
+public class ComputerInteractable : MonoBehaviour, IInteractable
 {
     public GameObject canvas;
     public Camera mainCamera;
     public Camera computerCamera;
+    public GameObject inventoryPanel;
     public void PlayerInRange()
     {
         canvas.SetActive(true);
@@ -19,6 +19,8 @@ public class TestInteractableObject : MonoBehaviour, IInteractable
         print("Interacted");
         mainCamera.gameObject.SetActive(false);
         computerCamera.gameObject.SetActive(true);
+        ComputerController.instance.puzzleOpen = true;
+        inventoryPanel.SetActive(false);
     }
     public void PlayerOutRange()
     {
