@@ -8,8 +8,11 @@ public class DownButton : MonoBehaviour, IKeyboardKey
     public ComputerController computerController;
     public void pressKey()
     {
-        computerController.activeButton = computerController.logOutButton;
-        computerController.activeButton.GetComponent<Image>().color = Color.blue;
-        computerController.openDoorButton.GetComponent<Image>().color = Color.white;
+        if (computerController.loggedIn == true)
+        {
+            computerController.activeButton = computerController.logOutButton;
+            computerController.activeButton.GetComponent<Image>().color = Color.blue;
+            computerController.openDoorButton.GetComponent<Image>().color = Color.white; 
+        }
     }
 }

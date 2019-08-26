@@ -614,6 +614,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545306240}
   m_CullTransparentMesh: 0
+--- !u!20 &744880847 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 494897804749935972, guid: d38d19d12fd1a434eae5ec28d1b1f0ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 8734866678355126069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836675946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,7 +3512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1979762576
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3617,10 +3623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5c069653652fa438b2a820057a4546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  mainCamera: {fileID: 0}
-  brokenDoorCamera: {fileID: 0}
-  inventoryPanel: {fileID: 0}
+  canvas: {fileID: 1347164071}
+  mainCamera: {fileID: 1979762577}
+  brokenDoorCamera: {fileID: 744880847}
+  inventoryPanel: {fileID: 1854488930}
 --- !u!65 &2068509364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4111,5 +4117,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2315031538146068283, guid: d38d19d12fd1a434eae5ec28d1b1f0ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1979762575}
+    - target: {fileID: 2315031538146068283, guid: d38d19d12fd1a434eae5ec28d1b1f0ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1854488930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d38d19d12fd1a434eae5ec28d1b1f0ef, type: 3}
