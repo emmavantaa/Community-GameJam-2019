@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     public IInteractable interactable;
     private Rigidbody rb;
     public List<Item> Inventory = new List<Item>();
+    private Quaternion qTo;
+    private float desiredRot;
+    public float rotDampening = 20;
+    public bool camouflaged;
+    public bool enemySeen;
 
     private bool interactableInRadius = false; 
 
@@ -17,6 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        qTo = transform.rotation;
     }
 
     // Update is called once per frame
@@ -48,23 +54,25 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             rb.AddForce(new Vector3(Time.deltaTime * speed,0,0));
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            desiredRot = 0;
         }
         if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(new Vector3(-Time.deltaTime * speed, 0, 0));
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            desiredRot = 180;
         }
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(new Vector3(0, 0, Time.deltaTime * speed));
-            transform.eulerAngles = new Vector3(0, -90, 0);
+            desiredRot = -90;
         }
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(new Vector3(0, 0, -Time.deltaTime * speed));
-            transform.eulerAngles = new Vector3(0, 90, 0);
+            desiredRot = 90;
         }
+        var desiredRotQ = Quaternion.Euler(transform.eulerAngles.x, desiredRot, transform.eulerAngles.z);
+        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotQ, Time.deltaTime * rotDampening);
         #endregion
         if (Input.GetKeyDown(KeyCode.E))
         {
