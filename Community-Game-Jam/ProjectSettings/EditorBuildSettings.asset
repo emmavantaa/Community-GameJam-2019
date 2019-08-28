@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d3b632f9099e9cb42974c8ccfdb14d27
+  - enabled: 1
     path: Assets/Scenes/LassiTestScene.unity
     guid: 0ae610e087b9ae244814f9ffed1bc399
   m_configObjects: {}
