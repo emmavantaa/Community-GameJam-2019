@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 429438832507135213}
   - component: {fileID: 3622658501435136459}
   - component: {fileID: 1870308268713596121}
+  - component: {fileID: 1691704060}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -99,6 +100,30 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   Inventory: []
+  rotDampening: 20
+  camouflaged: 0
+  enemySeen: 0
+  playerModel: {fileID: 2263264722197885231}
+  yawRot: 18
+--- !u!95 &1691704060
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084176903203089978}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0f5e0b3ff3894e749b7d897dddd8b053, type: 3}
+  m_Controller: {fileID: 9100000, guid: f11ef3cc13bc3de48b4e80595777d167, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4886941241292366750
 GameObject:
   m_ObjectHideFlags: 0

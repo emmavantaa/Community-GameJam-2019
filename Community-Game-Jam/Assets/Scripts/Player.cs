@@ -10,11 +10,15 @@ public class Player : MonoBehaviour
     public IInteractable interactable;
     private Rigidbody rb;
     public List<Item> Inventory = new List<Item>();
-    private Quaternion qTo;
-    private float desiredRot;
     public float rotDampening = 20;
     public bool camouflaged;
     public bool enemySeen;
+    private bool buttonDown;
+    public GameObject playerModel;
+    public float yawRot = 18;
+    float desiredYaw = 0;
+    float desiredRot = 0;
+    int divider = 0;
 
     private bool interactableInRadius = false; 
 
@@ -22,13 +26,24 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        qTo = transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     #region Movement
     {
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            desiredYaw = 0;
+            buttonDown = false;
+        }
+        if (buttonDown == true)
+        {
+            desiredYaw = 0;
+            desiredRot = 0;
+            divider = 0; 
+        }
+        bool wActive = false;
         #region regular controls
         /*if (Input.GetKey(KeyCode.W)) {
             transform.position += new Vector3(1 * Time.deltaTime * speed, 0, 0);
@@ -54,25 +69,52 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             rb.AddForce(new Vector3(Time.deltaTime * speed,0,0));
-            desiredRot = 0;
-        }
+            desiredRot += 0;
+            divider++;
+            desiredYaw = yawRot;
+            wActive = true;
+            buttonDown = true;
+}
         if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(new Vector3(-Time.deltaTime * speed, 0, 0));
-            desiredRot = 180;
+            desiredRot += 180;
+            divider++;
+            desiredYaw = yawRot;
+            buttonDown = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(new Vector3(0, 0, Time.deltaTime * speed));
-            desiredRot = -90;
+            if (wActive == false)
+            {
+                desiredRot += 270; 
+            }
+            else
+            {
+                desiredRot += -90;
+            }
+            divider++;
+            desiredYaw = yawRot;
+            buttonDown = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(new Vector3(0, 0, -Time.deltaTime * speed));
-            desiredRot = 90;
+            desiredRot += 90;
+            divider++;
+            desiredYaw = yawRot;
+            buttonDown = true;
+        }
+        //Count the desired rotation
+        if (divider > 0)
+        {
+            desiredRot = desiredRot / divider; 
         }
         var desiredRotQ = Quaternion.Euler(transform.eulerAngles.x, desiredRot, transform.eulerAngles.z);
+        var desiredYawQ = Quaternion.Euler(desiredYaw, playerModel.transform.localEulerAngles.y, playerModel.transform.localEulerAngles.z);
         transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotQ, Time.deltaTime * rotDampening);
+        playerModel.transform.localRotation = Quaternion.Lerp(playerModel.transform.localRotation, desiredYawQ, Time.deltaTime * rotDampening);
         #endregion
         if (Input.GetKeyDown(KeyCode.E))
         {
