@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
         if (Physics.SphereCast(transform.position, 7.5f , transform.TransformDirection(Vector3.forward) * 30, out hit, 30))
         {
-            if(hit.transform.gameObject.tag == "Player")
+            if(hit.transform.gameObject.tag == "Player" && GameManager.instance.player.camouflaged == false)
             {
                 Debug.DrawLine(transform.position, hit.point, Color.blue);
                 playerInSight = true;
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
         {
             Patrol();
         }
-        if (playerInSight == true && GameManager.instance.player.camouflaged == false)
+        if (playerInSight == true)
         {
             agent.SetDestination(hit.transform.position);
         }
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" && GameManager.instance.player.camouflaged == false)
         {
             other.gameObject.transform.position = new Vector3(GameManager.instance.enemyRespawn.position.x, other.gameObject.transform.position.y, GameManager.instance.enemyRespawn.position.z);
         }
