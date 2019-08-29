@@ -21,6 +21,7 @@ public class BrokenDoorInteractable : MonoBehaviour, IInteractable
         brokenDoorCamera.gameObject.SetActive(true);
         inventoryPanel.SetActive(false);
         BrokenDoorController.instance.puzzleOpen = true;
+        GameManager.instance.player.inPuzzle = true;
     }
 
     public void PlayerInRange()
@@ -33,17 +34,5 @@ public class BrokenDoorInteractable : MonoBehaviour, IInteractable
     {
         canvas.SetActive(false);
         print("Player out of range");
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
