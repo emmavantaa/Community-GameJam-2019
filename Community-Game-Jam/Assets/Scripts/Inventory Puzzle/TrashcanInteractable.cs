@@ -24,7 +24,6 @@ public class TrashcanInteractable : MonoBehaviour, IInteractable
         {
             print("can is empty");
         }
-        NarratorManager.instance.ReadLines(new List<int>{0,1});
     }
 
     public void PlayerInRange()

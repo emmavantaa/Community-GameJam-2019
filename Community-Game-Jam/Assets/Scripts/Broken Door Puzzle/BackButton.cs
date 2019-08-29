@@ -8,5 +8,6 @@ public class BackButton : MonoBehaviour
     public void PressButton()
     {
         GameManager.instance.player.inPuzzle = false;
+        BrokenDoorController.instance.puzzleOpen = false;
     }
 }

@@ -10,6 +10,10 @@ public class Enemy : MonoBehaviour
     public bool playerInSight;
     public List<Transform> patrolPoints = new List<Transform>();
     private int patrolPointIndex;
+    public int patrolSpeed;
+    public int patrolAcceleration;
+    public int playerInSightSpeed;
+    public int playerInSightAcceleration;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +26,15 @@ public class Enemy : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.SphereCast(transform.position, 0.75f , transform.TransformDirection(Vector3.forward) * 3, out hit, 3))
+        if (Physics.SphereCast(transform.position, 7.5f , transform.TransformDirection(Vector3.forward) * 30, out hit, 30))
         {
             if(hit.transform.gameObject.tag == "Player")
             {
                 Debug.DrawLine(transform.position, hit.point, Color.blue);
                 playerInSight = true;
                 GameManager.instance.player.enemySeen = true;
+                GetComponent<NavMeshAgent>().speed = playerInSightSpeed;
+                GetComponent<NavMeshAgent>().acceleration = playerInSightAcceleration;
             }
             else
             {
@@ -43,17 +49,26 @@ public class Enemy : MonoBehaviour
         {
             agent.SetDestination(hit.transform.position);
         }
+    }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            other.gameObject.transform.position = new Vector3(GameManager.instance.enemyRespawn.position.x, other.gameObject.transform.position.y, GameManager.instance.enemyRespawn.position.z);
+        }
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position + transform.TransformDirection(Vector3.forward) * 3, 0.75f);
-        Gizmos.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 3);
+        Gizmos.DrawWireSphere(transform.position + transform.TransformDirection(Vector3.forward) * 30, 7.5f);
+        Gizmos.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 30);
     }
 
     void Patrol()
     {
+        GetComponent<NavMeshAgent>().speed = patrolSpeed;
+        GetComponent<NavMeshAgent>().acceleration = patrolAcceleration;
         playerInSight = false;
         GameManager.instance.player.enemySeen = false;
         if (transform.position.x == patrolPoints[patrolPointIndex].position.x && transform.position.z == patrolPoints[patrolPointIndex].position.z)

@@ -8,5 +8,6 @@ public class LogOutButton : MonoBehaviour
     public void PressButton()
     {
         ComputerController.instance.puzzleOpen = false;
+        GameManager.instance.player.inPuzzle = false;
     }
 }

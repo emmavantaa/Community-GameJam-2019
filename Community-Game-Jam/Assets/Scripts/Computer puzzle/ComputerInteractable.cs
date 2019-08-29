@@ -21,6 +21,7 @@ public class ComputerInteractable : MonoBehaviour, IInteractable
         computerCamera.gameObject.SetActive(true);
         ComputerController.instance.puzzleOpen = true;
         inventoryPanel.SetActive(false);
+        GameManager.instance.player.inPuzzle = true;
     }
     public void PlayerOutRange()
     {
