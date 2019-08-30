@@ -11,5 +11,6 @@ public class InventorySlotButton : MonoBehaviour
     {
         inspectPanel.SetActive(true);
         KeycardController.instance.previewImage.sprite = itemInSlot.image;
+        GameManager.instance.inspectedItem = itemInSlot;
     }
 }

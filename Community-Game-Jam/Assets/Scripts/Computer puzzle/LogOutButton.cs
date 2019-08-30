@@ -9,5 +9,6 @@ public class LogOutButton : MonoBehaviour
     {
         ComputerController.instance.puzzleOpen = false;
         GameManager.instance.player.inPuzzle = false;
+        GameManager.instance.player.gameObject.SetActive(true);
     }
 }

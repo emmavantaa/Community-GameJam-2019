@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     public GameObject boxPrefab;
     public bool hasBox = false;
     public bool inPuzzle;
+    public Item heldItem;
+    public Transform heldItemPosition;
 
     private bool interactableInRadius = false; 
 

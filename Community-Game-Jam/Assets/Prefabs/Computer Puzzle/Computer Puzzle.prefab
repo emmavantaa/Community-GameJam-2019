@@ -579,12 +579,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986404007723055924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.379364, y: 1.8171597, z: -18.316122}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -39.424, y: 2.1547, z: -18.243}
+  m_LocalScale: {x: 1.8481, y: 1.8481, z: 1.8481}
   m_Children:
   - {fileID: 1865281304838746730}
   - {fileID: 986404009481026418}
-  - {fileID: 3588355164681849588}
   - {fileID: 986404008522162993}
   m_Father: {fileID: 1381221505324650682}
   m_RootOrder: 0
@@ -609,9 +608,11 @@ MonoBehaviour:
   logOutButton: {fileID: 567142586455700106}
   activeButton: {fileID: 9134059205168553085}
   loggedIn: 0
-  doorsOpened: 0
+  sprinklersOn: 0
   puzzleOpen: 0
   passwordInput: {fileID: 986404007655542373}
+  fire: {fileID: 0}
+  sprinklers: {fileID: 0}
 --- !u!1 &986404007906545996
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986404007906545996}
   m_LocalRotation: {x: 0.122764744, y: -0, z: -0, w: 0.9924358}
-  m_LocalPosition: {x: -39.379364, y: 2.521, z: -22.27}
+  m_LocalPosition: {x: -39.38, y: 3.58, z: -26.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381221505324650682}
@@ -806,7 +807,7 @@ RectTransform:
   - {fileID: 986404008516653366}
   - {fileID: 4114505888178349702}
   m_Father: {fileID: 986404007723055926}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1322,7 +1323,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3588355164681849588}
   m_Father: {fileID: 986404007723055926}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1855,7 +1857,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Open quarters door
+  m_text: Turn on sprinklers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2669,7 +2671,7 @@ GameObject:
   - component: {fileID: 7927452229304545771}
   - component: {fileID: 6839756000013675473}
   m_Layer: 0
-  m_Name: OpenQuarterButton
+  m_Name: SprinklersButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2964,7 +2966,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 986404007723055926}
+    m_TransformParent: {fileID: 986404009481026418}
     m_Modifications:
     - target: {fileID: -927199367670048503, guid: 35a5fa21900e1e048bc0bd6a51e9fc45,
         type: 3}
@@ -2989,7 +2991,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 35a5fa21900e1e048bc0bd6a51e9fc45,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 35a5fa21900e1e048bc0bd6a51e9fc45,
         type: 3}
@@ -2999,7 +3001,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 35a5fa21900e1e048bc0bd6a51e9fc45,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 35a5fa21900e1e048bc0bd6a51e9fc45,
         type: 3}
@@ -3009,7 +3011,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 35a5fa21900e1e048bc0bd6a51e9fc45,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 35a5fa21900e1e048bc0bd6a51e9fc45,
         type: 3}

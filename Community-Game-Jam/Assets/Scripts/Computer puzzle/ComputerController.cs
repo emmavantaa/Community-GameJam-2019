@@ -14,9 +14,11 @@ public class ComputerController : MonoBehaviour
     public Button logOutButton;
     public Button activeButton;
     public bool loggedIn;
-    public bool doorsOpened = false;
+    public bool sprinklersOn = false;
     public bool puzzleOpen = false;
     public TMP_InputField passwordInput;
+    public GameObject fire;
+    public GameObject sprinklers;
     private void Awake()
     {
         if(instance == null)

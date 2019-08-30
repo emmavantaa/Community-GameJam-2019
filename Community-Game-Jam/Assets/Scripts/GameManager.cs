@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public Player player;
     public Transform enemyRespawn;
+    public Item inspectedItem;
     private void Awake()
     {
         if(instance == null)
