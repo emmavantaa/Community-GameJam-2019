@@ -12,6 +12,7 @@ public class BrokenDoorController : MonoBehaviour
     public LayerMask layerMask;
     public List<Light> lights = new List<Light>();
     public bool allOn = false;
+    public GameObject backPanel;
 
     private void Awake()
     {
@@ -23,11 +24,6 @@ public class BrokenDoorController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

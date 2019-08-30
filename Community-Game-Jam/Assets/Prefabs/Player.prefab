@@ -109,7 +109,7 @@ MonoBehaviour:
   bp: {fileID: 841405517739216981}
   playerMesh: {fileID: 1319146819371546402}
   boxModel: {fileID: 784899287055192162}
-  boxPrefab: {fileID: 9069587204157467368, guid: a88c7fafec38ccf488adcadae15787aa,
+  boxPrefab: {fileID: 5517663395757504831, guid: 05d4787a6c318bb4ca94e307ee558e42,
     type: 3}
   hasBox: 0
   inPuzzle: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 5141221868571840213}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

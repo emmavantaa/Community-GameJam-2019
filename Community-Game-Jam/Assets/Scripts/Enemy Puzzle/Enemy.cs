@@ -47,7 +47,8 @@ public class Enemy : MonoBehaviour
         }
         if (playerInSight == true)
         {
-            agent.SetDestination(hit.transform.position);
+            target = hit.transform;
+            agent.SetDestination(target.position);
         }
     }
 
@@ -71,7 +72,7 @@ public class Enemy : MonoBehaviour
         GetComponent<NavMeshAgent>().acceleration = patrolAcceleration;
         playerInSight = false;
         GameManager.instance.player.enemySeen = false;
-        if (transform.position.x == patrolPoints[patrolPointIndex].position.x && transform.position.z == patrolPoints[patrolPointIndex].position.z)
+        if (Mathf.Abs(transform.position.x - patrolPoints[patrolPointIndex].position.x) < 0.1f && Mathf.Abs(transform.position.z - patrolPoints[patrolPointIndex].position.z) < 0.1f)
         {
             if(patrolPointIndex < patrolPoints.Count - 1)
             {
@@ -81,11 +82,13 @@ public class Enemy : MonoBehaviour
             {
                 patrolPointIndex = 0;
             }
-            agent.SetDestination(patrolPoints[patrolPointIndex].position);
+            target = patrolPoints[patrolPointIndex];
+            agent.SetDestination(new Vector3(target.position.x, transform.position.y, target.position.z));
         }
         else
         {
-            agent.SetDestination(patrolPoints[patrolPointIndex].position);
+            target = patrolPoints[patrolPointIndex];
+            agent.SetDestination(new Vector3(target.position.x, transform.position.y, target.position.z));
         }
     }
 }

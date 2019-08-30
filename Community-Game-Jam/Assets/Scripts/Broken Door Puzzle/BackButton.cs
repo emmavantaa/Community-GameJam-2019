@@ -9,5 +9,7 @@ public class BackButton : MonoBehaviour
     {
         GameManager.instance.player.inPuzzle = false;
         BrokenDoorController.instance.puzzleOpen = false;
+        BrokenDoorController.instance.backPanel.SetActive(false);
+        GameManager.instance.player.gameObject.SetActive(true);
     }
 }

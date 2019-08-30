@@ -22,6 +22,8 @@ public class BrokenDoorInteractable : MonoBehaviour, IInteractable
         inventoryPanel.SetActive(false);
         BrokenDoorController.instance.puzzleOpen = true;
         GameManager.instance.player.inPuzzle = true;
+        BrokenDoorController.instance.backPanel.SetActive(true);
+        GameManager.instance.player.gameObject.SetActive(false);
     }
 
     public void PlayerInRange()
