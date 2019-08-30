@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb797a3e5e5dd814894b748c8c6043d7, type: 3}
-  m_Name: OrangeKeycard
+  m_Name: Bomb
   m_EditorClassIdentifier: 
-  itemName: OrangeCard
-  image: {fileID: 21300000, guid: 967dd815c6fb9fb4eba33874baccd04b, type: 3}
-  model: {fileID: -927199367670048503, guid: a8fc73aba4c229a49a2cde4f69762ddd, type: 3}
+  itemName: Bomb
+  image: {fileID: 21300000, guid: a2183804813c0e347b3997893964166e, type: 3}
+  model: {fileID: -927199367670048503, guid: 0c2546939f482d8408763b966135df07, type: 3}

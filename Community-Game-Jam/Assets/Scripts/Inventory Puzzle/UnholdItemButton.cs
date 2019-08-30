@@ -13,5 +13,6 @@ public class UnholdItemButton : MonoBehaviour
     private void UnholdItem()
     {
         GameManager.instance.player.heldItem = null;
+        Destroy(GameObject.Find("heldItem"));
     }
 }
