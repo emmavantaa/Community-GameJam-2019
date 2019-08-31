@@ -17,6 +17,7 @@ public class DeckComputerInteractable : MonoBehaviour, IInteractable
             GameManager.instance.exitDoorOpen = true;
             print("Exit door opened");
             GameManager.instance.startDoor.GetComponent<Open>().OpenDoor();
+            NarratorManager.instance.ReadLines(new List<int> { 29 });
         }
     }
 

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: e985ec54dbc221a41998991078c542dc,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9506,7 +9506,7 @@ PrefabInstance:
     - target: {fileID: 5960766480648290723, guid: c745bf96bf9cb9e4b955d970e67c297c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 381.7
+      value: 365.4
       objectReference: {fileID: 0}
     - target: {fileID: 5960766480648290723, guid: c745bf96bf9cb9e4b955d970e67c297c,
         type: 3}
@@ -68511,7 +68511,7 @@ PrefabInstance:
     - target: {fileID: 3121167526358365500, guid: 8e31df9d03b149e408d061115dc99008,
         type: 3}
       propertyPath: lines.Array.data[29]
-      value: 
+      value: The exit door is now open. Exit the ship quickly.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e31df9d03b149e408d061115dc99008, type: 3}
