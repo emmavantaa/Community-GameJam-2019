@@ -8,6 +8,7 @@ public class BrokenDoorInteractable : MonoBehaviour, IInteractable
     public Camera mainCamera;
     public Camera brokenDoorCamera;
     public GameObject inventoryPanel;
+    bool used = false;
 
     public string GetName()
     {
@@ -26,7 +27,11 @@ public class BrokenDoorInteractable : MonoBehaviour, IInteractable
             GameManager.instance.player.inPuzzle = true;
             BrokenDoorController.instance.backPanel.SetActive(true);
             GameManager.instance.player.gameObject.SetActive(false);
-            NarratorManager.instance.ReadLines(new List<int> { 7,8 });
+            if (used == false)
+            {
+                NarratorManager.instance.ReadLines(new List<int> { 7, 8 });
+                used = true;
+            }
         }
     }
 

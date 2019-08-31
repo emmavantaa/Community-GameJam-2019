@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     public bool inPuzzle;
     public Item heldItem;
     public Transform heldItemPosition;
+    public ParticleSystem explosion;
 
     private bool interactableInRadius = false; 
 

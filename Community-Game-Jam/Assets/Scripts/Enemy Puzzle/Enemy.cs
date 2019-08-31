@@ -45,11 +45,6 @@ public class Enemy : MonoBehaviour
         {
             Patrol();
         }
-        if (playerInSight == true)
-        {
-            target = hit.transform;
-            agent.SetDestination(target.position);
-        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -77,7 +72,7 @@ public class Enemy : MonoBehaviour
         GetComponent<NavMeshAgent>().acceleration = patrolAcceleration;
         playerInSight = false;
         GameManager.instance.player.enemySeen = false;
-        if (Mathf.Abs(transform.position.x - patrolPoints[patrolPointIndex].position.x) < 0.1f && Mathf.Abs(transform.position.z - patrolPoints[patrolPointIndex].position.z) < 0.1f)
+        if (agent.remainingDistance < agent.stoppingDistance + 3)
         {
             if(patrolPointIndex < patrolPoints.Count - 1)
             {
@@ -88,7 +83,7 @@ public class Enemy : MonoBehaviour
                 patrolPointIndex = 0;
             }
             target = patrolPoints[patrolPointIndex];
-            agent.SetDestination(new Vector3(target.position.x, transform.position.y, target.position.z));
+            agent.SetDestination(new Vector3(target.position.x, transform.localPosition.y, target.localPosition.z));
         }
         else
         {

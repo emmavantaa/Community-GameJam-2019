@@ -20,6 +20,10 @@ public class KeycardDoorInteractable : MonoBehaviour, IInteractable
             GameManager.instance.storageDoorOpen = true;
             GameManager.instance.warehouseDoor.GetComponent<Open>().OpenDoor();
         }
+        else if(GameManager.instance.player.heldItem == null)
+        {
+            NarratorManager.instance.ReadLines(new List<int> { 31 });
+        }
         else
         {
             print("Wrong keycard");

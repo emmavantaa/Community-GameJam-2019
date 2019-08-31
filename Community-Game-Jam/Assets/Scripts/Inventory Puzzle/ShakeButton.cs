@@ -28,6 +28,7 @@ public class ShakeButton : MonoBehaviour
                     {
                         KeycardController.instance.inventorySlots[i].GetComponent<Image>().sprite = KeycardController.instance.emptySprite;
                         KeycardController.instance.inventorySlots[i].GetComponent<InventorySlotButton>().itemInSlot = null;
+                        GameManager.instance.player.explosion.Play();
                         break;
                     } 
                 }
