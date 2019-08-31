@@ -12,5 +12,6 @@ public class Key : MonoBehaviour, IKeyboardKey
     {
         computerController.passwordInput.text += key;
         print(computerController.passwordInput.text);
+        GetComponent<AudioSource>().Play();
     }
 }

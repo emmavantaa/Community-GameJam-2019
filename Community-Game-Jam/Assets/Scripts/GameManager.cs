@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public GameObject mainDeckDoor;
     public GameObject quartersDoor;
     public GameObject warehouseDoor;
+
+    public GameObject lightning;
+    public GameObject flashLight;
     private void Awake()
     {
         if(instance == null)
@@ -35,6 +38,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        lightning.SetActive(false);
+        flashLight.SetActive(true);
         
     }
 }

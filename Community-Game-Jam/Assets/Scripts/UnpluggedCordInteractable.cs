@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnpluggedCordInteractable : MonoBehaviour, IInteractable
 {
     public GameObject canvas;
+    public GameObject sparks;
     public string GetName()
     {
         return name;
@@ -16,6 +17,9 @@ public class UnpluggedCordInteractable : MonoBehaviour, IInteractable
         NarratorManager.instance.ReadLines(new List<int> { 4,5,6 });
         gameObject.SetActive(false);
         GameManager.instance.startDoor.GetComponent<Open>().CloseDoor();
+        GameManager.instance.flashLight.SetActive(false);
+        GameManager.instance.lightning.SetActive(true);
+        sparks.SetActive(false);
     }
 
     public void PlayerInRange()
@@ -26,17 +30,5 @@ public class UnpluggedCordInteractable : MonoBehaviour, IInteractable
     public void PlayerOutRange()
     {
         canvas.SetActive(false);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

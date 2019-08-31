@@ -7,6 +7,7 @@ public class TrashcanInteractable : MonoBehaviour, IInteractable
     public GameObject canvas;
     public Item item;
     public KeycardController keycardController;
+    Animator anim;
     public string GetName()
     {
         return name;
@@ -25,6 +26,7 @@ public class TrashcanInteractable : MonoBehaviour, IInteractable
         {
             print("can is empty");
         }
+        anim.SetBool("isOpen", true);
     }
 
     public void PlayerInRange()
@@ -35,5 +37,10 @@ public class TrashcanInteractable : MonoBehaviour, IInteractable
     public void PlayerOutRange()
     {
         canvas.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
     }
 }

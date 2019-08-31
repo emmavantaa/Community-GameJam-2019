@@ -8,6 +8,7 @@ public class DownButton : MonoBehaviour, IKeyboardKey
     public ComputerController computerController;
     public void pressKey()
     {
+        GetComponent<AudioSource>().Play();
         if (computerController.loggedIn == true)
         {
             computerController.activeButton = computerController.logOutButton;

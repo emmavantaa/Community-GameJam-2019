@@ -9,11 +9,12 @@ public class UpButton : MonoBehaviour, IKeyboardKey
 
     public void pressKey()
     {
+        GetComponent<AudioSource>().Play();
         if (computerController.loggedIn == true)
         {
             computerController.activeButton = computerController.openDoorButton;
             computerController.activeButton.GetComponent<Image>().color = Color.blue;
-            computerController.logOutButton.GetComponent<Image>().color = Color.white; 
+            computerController.logOutButton.GetComponent<Image>().color = Color.white;
         }
     }
 }

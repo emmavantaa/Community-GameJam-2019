@@ -8,6 +8,7 @@ public class EnterButton : MonoBehaviour, IKeyboardKey
     public ComputerController computerController;
     public void pressKey()
     {
+        GetComponent<AudioSource>().Play();
         computerController.activeButton.onClick.Invoke();
     }
 }

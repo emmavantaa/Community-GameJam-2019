@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Open : MonoBehaviour
+public class Open : MonoBehaviour, IInteractable
 {
     Animator anim;
     public Collider coll;
@@ -21,5 +21,23 @@ public class Open : MonoBehaviour
     public void CloseDoor()
     {
         anim.SetBool("isOpen", false);
+    }
+
+    public void PlayerInRange()
+    {
+    }
+
+    public void Interact()
+    {
+        OpenDoor();
+    }
+
+    public void PlayerOutRange()
+    {
+    }
+
+    public string GetName()
+    {
+        return name;
     }
 }
