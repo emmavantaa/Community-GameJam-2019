@@ -75,13 +75,24 @@ MonoBehaviour:
   - Well that didin't go as planned. You need to try something else.
   - Apparently the ship's security robots have also activated. Don't worry though
     they are 100% friendly.
-  - Looks like you look too hostile for them. Maybe if you could camouflage yourself
-    somehow you could go past them.
+  - Looks like you look too hostile for them. Maybe if you find some disguise you
+    could go past them.
   - Do you seriously think a box will fool them? They are the best security robots.
     That will never work.
   - Apparently it did work.. Maybe we need to order some new ones.
   - Ok press the button in the main deck and it should open the exit door.
   - You don't need more bombs right now.
+  - You need to hold the bomb before shaking
+  - You need to hold the bomb before you can throw it.
+  - That should do the trick
+  - Move further away from the door
+  - You are too far away from the door to thow it into it
+  - The exit door is now open. Exit the ship quickly.
+  - Why are you searching trashcans?
+  - 
+  - 
+  - 
   - 
   nextLineIndex: 0
-  linesToRead: 
+  linesToBeRead: 
+  lineComplete: 1

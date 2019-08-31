@@ -14,12 +14,12 @@ public class TrashcanInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(item != null)
+        NarratorManager.instance.ReadLines(new List<int> { 30 });
+        if (item != null)
         {
             GameManager.instance.player.Inventory.Add(item);
             KeycardController.instance.UpdateSlots(item);
             item = null;
-            //NarratorManager.instance.ReadLines(new List<int> { 0, 1 });
         }
         else
         {
