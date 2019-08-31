@@ -13,29 +13,37 @@ public class BombInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        bool found = false;
-        for (int i = 0; i < KeycardController.instance.inventorySlots.Count; i++)
+        if (GameManager.instance.mainDeckDoorOpen == false)
         {
-            if(KeycardController.instance.inventorySlots[i].GetComponent<InventorySlotButton>().itemInSlot == item)
+            bool found = false;
+            for (int i = 0; i < KeycardController.instance.inventorySlots.Count; i++)
             {
-                found = true;
-                break;
+                if (KeycardController.instance.inventorySlots[i].GetComponent<InventorySlotButton>().itemInSlot == item)
+                {
+                    found = true;
+                    break;
+                }
             }
-        }
-        if (!found)
-        {
-            GameManager.instance.player.Inventory.Add(item);
-            KeycardController.instance.UpdateSlots(item); 
-        }
-        else
-        {
-            print("Bomb already in inventory");
+            if (!found)
+            {
+                GameManager.instance.player.Inventory.Add(item);
+                KeycardController.instance.UpdateSlots(item);
+                NarratorManager.instance.ReadLines(new List<int> { 15, 16 });
+            }
+            else
+            {
+                print("Bomb already in inventory");
+                NarratorManager.instance.ReadLines(new List<int> { 23 });
+            } 
         }
     }
 
     public void PlayerInRange()
     {
-        canvas.SetActive(true);
+        if (GameManager.instance.mainDeckDoorOpen == false)
+        {
+            canvas.SetActive(true); 
+        }
     }
 
     public void PlayerOutRange()

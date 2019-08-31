@@ -19,7 +19,7 @@ public class TrashcanInteractable : MonoBehaviour, IInteractable
             GameManager.instance.player.Inventory.Add(item);
             KeycardController.instance.UpdateSlots(item);
             item = null;
-            NarratorManager.instance.ReadLines(new List<int> { 0, 1 });
+            //NarratorManager.instance.ReadLines(new List<int> { 0, 1 });
         }
         else
         {

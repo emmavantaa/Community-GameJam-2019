@@ -17,6 +17,8 @@ public class KeycardDoorInteractable : MonoBehaviour, IInteractable
         if(GameManager.instance.player.heldItem == keycard)
         {
             print("Door Opened");
+            GameManager.instance.storageDoorOpen = true;
+            GameManager.instance.warehouseDoor.GetComponent<Open>().OpenDoor();
         }
         else
         {

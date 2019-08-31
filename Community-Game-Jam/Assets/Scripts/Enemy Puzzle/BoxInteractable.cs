@@ -14,11 +14,19 @@ public class BoxInteractable : MonoBehaviour, IInteractable
     public void Interact()
     {
 
-        if (player.enemySeen == false && player.camouflaged == false)
+        if (GameManager.instance.mainDeckDoorOpen == true)
         {
-            player.camouflaged = true;
-            player.Hide();
-            Destroy(gameObject);
+            if (player.enemySeen == false && player.camouflaged == false)
+            {
+                player.camouflaged = true;
+                player.Hide();
+                Destroy(gameObject);
+                if (GameManager.instance.firstTimeInBox == false)
+                {
+                    NarratorManager.instance.ReadLines(new List<int> { 20 });
+                    GameManager.instance.firstTimeInBox = true;
+                }
+            } 
         }
     }
 
@@ -26,8 +34,11 @@ public class BoxInteractable : MonoBehaviour, IInteractable
 
     public void PlayerInRange()
     {
-        canvas.SetActive(true);
-        print("Player in range");
+        if (GameManager.instance.mainDeckDoorOpen == true)
+        {
+            canvas.SetActive(true);
+            print("Player in range"); 
+        }
     }
 
     public void PlayerOutRange()

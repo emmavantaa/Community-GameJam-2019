@@ -59,6 +59,8 @@ public class BrokenDoorController : MonoBehaviour
         {
             allOn = true;
             print("COMPLETED!");
+            NarratorManager.instance.ReadLines(new List<int> { 9 });
+            GameManager.instance.quartersDoor.GetComponent<Open>().OpenDoor();
         }
     }
 }

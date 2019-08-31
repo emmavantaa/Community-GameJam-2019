@@ -49,23 +49,39 @@ MonoBehaviour:
   lines:
   - Hello! I assume you are the spaceship repair guy. I Have been expecting you.
   - I'm S.M.A.R.T and I am the ships's central AI.
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - For some reason the power has gone off. Check if someone has unplugged the central
+    cord.
+  - Great. Someone actually has unplugged it. Plug it back in and you should be ready
+    to go.
+  - Well whaddaya know. The exit door closed. That's some ridicolous engineering right
+    there.
+  - You need to access the main decks's computer to unlock the door. I don't think
+    the crew left keycard for that door.
+  - Maybe there is a green keycard in the workers' quarters so we can enter to the
+    storage and look something useful there.
+  - Excellent some dum-dum has left the doors fuse panel open.
+  - You should try to take the doors power off by trying to turn off all the lights.
+    That should do the trick.
+  - You did it! Even though you didin't do it as I said...
+  - Maybe we can find the green keycard somewhere here.
+  - When you find it open the door on the east side of the ship.
+  - Well great there is a huge fire. Luckily you have fire resistant space suit so
+    we can go right through the flames.
+  - Why are you not wearing your fire resistant space suit? Now we need to figure
+    out something else. Check if this computer here can help.
+  - Type in the password and log in
+  - Maybe with this bomb we can blow up the door to the main deck
+  - You need to shake the bomb really hard before placing it to set it.
+  - Well that didin't go as planned. You need to try something else.
+  - Apparently the ship's security robots have also activated. Don't worry though
+    they are 100% friendly.
+  - Looks like you look too hostile for them. Maybe if you could camouflage yourself
+    somehow you could go past them.
+  - Do you seriously think a box will fool them? They are the best security robots.
+    That will never work.
+  - Apparently it did work.. Maybe we need to order some new ones.
+  - Ok press the button in the main deck and it should open the exit door.
+  - You don't need more bombs right now.
   - 
   nextLineIndex: 0
   linesToRead: 

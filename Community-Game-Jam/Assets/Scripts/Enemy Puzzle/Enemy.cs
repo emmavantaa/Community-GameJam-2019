@@ -56,7 +56,12 @@ public class Enemy : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && GameManager.instance.player.camouflaged == false)
         {
-            other.gameObject.transform.position = new Vector3(GameManager.instance.enemyRespawn.position.x, other.gameObject.transform.position.y, GameManager.instance.enemyRespawn.position.z);
+            GameManager.instance.player.transform.position = new Vector3(GameManager.instance.enemyRespawn.position.x, other.gameObject.transform.position.y, GameManager.instance.enemyRespawn.position.z);
+            if(GameManager.instance.enemyHit == false)
+            {
+                GameManager.instance.enemyHit = true;
+                NarratorManager.instance.ReadLines(new List<int> { 19 });
+            }
         }
     }
 

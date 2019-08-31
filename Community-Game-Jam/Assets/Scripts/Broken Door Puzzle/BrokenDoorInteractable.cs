@@ -16,20 +16,27 @@ public class BrokenDoorInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        print("Interacted");
-        mainCamera.gameObject.SetActive(false);
-        brokenDoorCamera.gameObject.SetActive(true);
-        inventoryPanel.SetActive(false);
-        BrokenDoorController.instance.puzzleOpen = true;
-        GameManager.instance.player.inPuzzle = true;
-        BrokenDoorController.instance.backPanel.SetActive(true);
-        GameManager.instance.player.gameObject.SetActive(false);
+        if (GameManager.instance.cordPlugged == true)
+        {
+            print("Interacted");
+            mainCamera.gameObject.SetActive(false);
+            brokenDoorCamera.gameObject.SetActive(true);
+            inventoryPanel.SetActive(false);
+            BrokenDoorController.instance.puzzleOpen = true;
+            GameManager.instance.player.inPuzzle = true;
+            BrokenDoorController.instance.backPanel.SetActive(true);
+            GameManager.instance.player.gameObject.SetActive(false);
+            NarratorManager.instance.ReadLines(new List<int> { 7,8 });
+        }
     }
 
     public void PlayerInRange()
     {
-        canvas.SetActive(true);
-        print("Player in range");
+        if (GameManager.instance.cordPlugged == true)
+        {
+            canvas.SetActive(true);
+            print("Player in range"); 
+        }
     }
 
     public void PlayerOutRange()

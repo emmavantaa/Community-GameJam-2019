@@ -14,12 +14,12 @@ public class Open : MonoBehaviour
         coll = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenDoor()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            anim.SetBool("isOpen", true);
-        }
+        anim.SetBool("isOpen", true);
+    }
+    public void CloseDoor()
+    {
+        anim.SetBool("isOpen", false);
     }
 }
