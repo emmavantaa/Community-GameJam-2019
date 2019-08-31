@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bomb
   m_EditorClassIdentifier: 
   itemName: Bomb
-  image: {fileID: 21300000, guid: a2183804813c0e347b3997893964166e, type: 3}
+  image: {fileID: 21300000, guid: e653f297a3c54d14c9813c961bd9a935, type: 3}
   model: {fileID: -927199367670048503, guid: 0c2546939f482d8408763b966135df07, type: 3}

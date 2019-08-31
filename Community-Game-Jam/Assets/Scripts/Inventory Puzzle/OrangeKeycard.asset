@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OrangeKeycard
   m_EditorClassIdentifier: 
   itemName: OrangeCard
-  image: {fileID: 21300000, guid: 967dd815c6fb9fb4eba33874baccd04b, type: 3}
+  image: {fileID: 21300000, guid: d7dda5a87994f2b40a9fb90949235b5e, type: 3}
   model: {fileID: -927199367670048503, guid: a8fc73aba4c229a49a2cde4f69762ddd, type: 3}

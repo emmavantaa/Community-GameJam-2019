@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GreenKeycard
   m_EditorClassIdentifier: 
   itemName: GreenCard
-  image: {fileID: 21300000, guid: 63cf4b72fb096854d9089d63e6380d1d, type: 3}
+  image: {fileID: 21300000, guid: 51fc1d8f669c3a04a99aea33a0f0fb60, type: 3}
   model: {fileID: -927199367670048503, guid: a8fc73aba4c229a49a2cde4f69762ddd, type: 3}
